@@ -7,10 +7,12 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+/*pregunta al usuario su año de nacimiento*/
 rl.question('Ingrese su año de nacimiento: ', (añoNacimiento) => {
   const añoActual = new Date().getFullYear();
   const edad = añoActual - parseInt(añoNacimiento);
 
+  /*Muestra la edad aproximada al usuario*/
   console.log(`Tu edad aproximada es: ${edad} años.`);
 
   rl.close();

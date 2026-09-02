@@ -8,6 +8,7 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
+/*pregunta al usuario el nombre del producto, precio unitario y cantidad*/
 
 rl.question('Ingrese el nombre del producto: ', (nombreProducto) => {
   rl.question('Ingrese el precio unitario: ', (precioUnitario) => {
@@ -16,6 +17,7 @@ rl.question('Ingrese el nombre del producto: ', (nombreProducto) => {
       const primerasTresLetras = nombreProducto.substring(0, 3);
       const precioTotal = parseFloat(precioUnitario) * parseInt(cantidad);
 
+      /*Muestra los resultados al usuario*/
       console.log(`Nombre del producto en mayúsculas: ${nombreMayusculas}`);
       console.log(`Primeras 3 letras del producto: ${primerasTresLetras}`);
       console.log(`Precio total: $${precioTotal.toFixed(2)}`);

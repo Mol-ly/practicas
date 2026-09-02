@@ -8,11 +8,13 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+/*pregunta al usuario su nombre completo*/
 rl.question("Ingrese su nombre completo: ", (nombre) => {
   const nombreMayusculas = nombre.toUpperCase();
   const primerasCuatroLetras = nombre.substring(0, 4);
   const primerasCuatroLetrasMinusculas = primerasCuatroLetras.toLowerCase();
 
+  /*Muestra los resultados al usuario*/
   console.log(`Nombre en mayúsculas: ${nombreMayusculas}`);
   console.log(`Primeras 4 letras: ${primerasCuatroLetras}`);
   console.log(`Primeras 4 letras en minúsculas: ${primerasCuatroLetrasMinusculas}`);

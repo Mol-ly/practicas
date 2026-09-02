@@ -7,6 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+/*pregunta al usuario para obtener la fecha y hora actual*/
 rl.question('Presione Enter para obtener la fecha y hora actual: ', () => {
   const fecha = new Date();
   const dia = fecha.getDate();
@@ -16,6 +17,7 @@ rl.question('Presione Enter para obtener la fecha y hora actual: ', () => {
   const minutos = fecha.getMinutes();
   const segundos = fecha.getSeconds();                                                                                                                              
 
+  /*Muestra la fecha y hora actual al usuario*/
     console.log(`Hoy es ${dia}/${mes}/${año} y son las ${hora}:${minutos}:${segundos}`);    
     rl.close();
 });         
