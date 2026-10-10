@@ -1,0 +1,58 @@
+/*
+TAREA 2: Cajero Automático Mejorado (DO...WHILE)
+Requiere: npm install readline-sync
+*/
+
+const readlineSync = require('readline-sync');
+
+let saldo = 1000;
+let opcion;
+
+do {
+    console.log('\n=== CAJERO AUTOMÁTICO ===');
+    console.log('1) Consultar saldo');
+    console.log('2) Retirar');
+    console.log('3) Depositar');
+    console.log('4) Salir');
+
+    opcion = readlineSync.question('Seleccione una opcion (1-4): ').trim();
+
+    switch (opcion) {
+        case '1':
+            console.log('\nSu saldo actual es: $' + saldo.toFixed(2));
+            break;
+
+        case '2':
+            let retiro = parseFloat(readlineSync.question('\nIngrese la cantidad a retirar: $'));
+
+            if (isNaN(retiro) || retiro <= 0) {
+                console.log('Monto no válido.');
+            } else if (retiro > saldo) {
+                console.log('Fondos insuficientes. El retiro excede su saldo actual.');
+            } else {
+                saldo -= retiro;
+                console.log('Retiro exitoso. Su nuevo saldo es: $' + saldo.toFixed(2));
+            }
+            break;
+
+        case '3':
+            let deposito = parseFloat(readlineSync.question('\nIngrese la cantidad a depositar: $'));
+
+            if (isNaN(deposito) || deposito <= 0) {
+                console.log('El depósito debe ser mayor a $0.');
+            } else {
+                saldo += deposito;
+                console.log('Depósito exitoso. Su nuevo saldo es: $' + saldo.toFixed(2));
+            }
+            break;
+
+        case '4':
+            console.log('\nGracias por usar el cajero automático. ¡Hasta pronto!');
+            break;
+
+        default:
+            console.log('\nOpción no válida. Intente de nuevo.');
+            break;
+    }
+
+} while (opcion !== '4');
