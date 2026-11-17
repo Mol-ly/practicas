@@ -1,0 +1,9 @@
+{
+  "name": "sistema-crud-snake",
+  "version": "1.0.0",
+  "description": "Sistema CRUD modular con juego Snake y ranking en JSON",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  }
+}
